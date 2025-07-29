@@ -21,4 +21,17 @@ function agregarAmigo() {
 
     // Limpiamos el campo de texto para que el usuario pueda escribir otro nombre
     input.value = "";
+
+    
+    function mostrarLista() {
+    const ul = document.getElementById("listaAmigos");
+    ul.innerHTML = "";
+
+    // Recorremos el arreglo de amigos y creamos un elemento <li> por cada nombre
+    listaDeAmigos.forEach(function(amigo) {
+        const li = document.createElement("li"); // creamos un nuevo elemento de lista
+        li.textContent = amigo; // le ponemos el nombre del amigo
+        ul.appendChild(li); // lo agregamos a la lista en la página
+    });
+    }
 }
