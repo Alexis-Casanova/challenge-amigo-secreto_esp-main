@@ -35,3 +35,22 @@ function agregarAmigo() {
     });
     }
 }
+
+function sortearAmigo() {
+    // Verificamos si la lista tiene al menos un nombre
+    if (listaDeAmigos.length === 0) {
+        alert("Primero debes añadir al menos un nombre.");
+        return;
+    }
+
+    // Elegimos un nombre aleatorio de la lista
+    const indiceAleatorio = Math.floor(Math.random() * listaDeAmigos.length);
+    const amigoElegido = listaDeAmigos[indiceAleatorio];
+
+    // Mostramos el nombre sorteado en la sección de resultado
+    const resultado = document.getElementById("resultado");
+    resultado.innerHTML = ""; // limpiamos resultado anterior
+    const li = document.createElement("li");
+    li.textContent = `🎉 El amigo secreto es: ${amigoElegido}`;
+    resultado.appendChild(li);
+}
